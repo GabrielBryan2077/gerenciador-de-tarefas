@@ -1,6 +1,6 @@
 # Organiza — Gerenciador de tarefas
 
-> **Link do sistema publicado:** [(https://gabrielbryan2077.github.io/gerenciador-de-tarefas/)]
+> **Link do sistema publicado:** [https://gabrielbryan2077.github.io/gerenciador-de-tarefas/]
 
 ## Objetivo
 Aplicação web simples para organizar tarefas pessoais, conforme o tema A da atividade prática.
