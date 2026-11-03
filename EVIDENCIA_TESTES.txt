@@ -1,0 +1,24 @@
+Comando: node --test
+Resultado: 7 testes aprovados, 0 falhas.
+
+TAP version 13
+# Subtest: cria tarefa com descrição normalizada e status pendente
+ok 1
+# Subtest: rejeita descrição vazia e prioridade inválida
+ok 2
+# Subtest: edita descrição, prioridade e prazo sem alterar identidade
+ok 3
+# Subtest: filtra status e resume contagens
+ok 4
+# Subtest: fluxo de serviço cria, persiste, altera status e exclui
+ok 5
+# Subtest: serviço rejeita atualização ou exclusão de ID inexistente
+ok 6
+# Subtest: armazenamento ignora conteúdo corrompido e formato inválido
+ok 7
+
+1..7
+# tests 7
+# pass 7
+# fail 0
+# skipped 0

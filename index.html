@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gerenciador simples de tarefas pessoais.">
+  <title>Organiza — Gerenciador de tarefas</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✓</span><span>organiza<span class="brand-dot">.</span></span></div>
+    <span class="topbar-note">Seu dia, em ordem.</span>
+  </header>
+  <main class="app-shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">GERENCIADOR DE TAREFAS</p>
+        <h1>Transforme planos<br><span>em progresso.</span></h1>
+        <p class="intro-copy">Organize o que precisa ser feito, uma tarefa de cada vez.</p>
+      </div>
+      <div class="summary" aria-label="Resumo das tarefas">
+        <div><strong id="totalCount">0</strong><span>Total</span></div>
+        <div><strong id="pendingCount">0</strong><span>Pendentes</span></div>
+        <div><strong id="completedCount">0</strong><span>Concluídas</span></div>
+      </div>
+    </section>
+
+    <section class="panel form-panel" aria-labelledby="formTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">NOVA TAREFA</p><h2 id="formTitle">O que você precisa fazer?</h2></div>
+      </div>
+      <form id="taskForm" novalidate>
+        <label class="field full">Descrição
+          <input id="description" name="description" type="text" maxlength="160" placeholder="Ex.: Finalizar relatório" required>
+        </label>
+        <div class="form-grid">
+          <label class="field">Prioridade
+            <select id="priority" name="priority">
+              <option value="baixa">Baixa</option><option value="media" selected>Média</option><option value="alta">Alta</option>
+            </select>
+          </label>
+          <label class="field">Prazo
+            <input id="dueDate" name="dueDate" type="date">
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="button primary" id="saveButton" type="submit">Adicionar tarefa <span>＋</span></button>
+          <button class="button quiet hidden" id="cancelEdit" type="button">Cancelar edição</button>
+        </div>
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="tasks-section">
+      <div class="tasks-heading">
+        <div><p class="eyebrow">SEU PLANEJAMENTO</p><h2>Lista de tarefas</h2></div>
+        <label class="filter-label">Exibir
+          <select id="statusFilter" aria-label="Filtrar tarefas">
+            <option value="todas">Todas</option><option value="pendente">Pendentes</option><option value="concluida">Concluídas</option>
+          </select>
+        </label>
+      </div>
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">☷</div><h3>Nenhuma tarefa por aqui</h3><p>Adicione sua primeira tarefa para começar a organizar o dia.</p>
+      </div>
+    </section>
+    <footer>As tarefas ficam salvas neste navegador.</footer>
+  </main>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
